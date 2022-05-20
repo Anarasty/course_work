@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+
+
+$first-color: #ff0000;
+$second-color:#000000;
+$third-color:#ffffff;
+
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Mukta', sans-serif;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import '_header';
