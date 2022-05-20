@@ -20,7 +20,7 @@
     <header>
       <div class="header-container container">
         <h1>Find your film</h1>
-        <a class="header-link" href="watchlist.html">My Watchlist</a>
+        <a class="header-link" href="favlist.html">My Watchlist</a>
       </div>
     </header>
 
@@ -44,23 +44,24 @@
         <button class="search-button">Search</button>
       </form>
 
-      <div class="start-exploring" id="start-exploring">
-        <img
+      <div class="empty-find-page" id="empty-find-page">
+        <!-- <img
           src="images/start-exploring.svg"
           width="70"
           height="61.25"
           alt=""
-        />
-        <p class="start-exploring-text">Start exploring</p>
+        /> -->
+        <!-- <p class="start-exploring-text">Start exploring</p> -->
+        <h1>Search for something</h1>
       </div>
 
-      <div class="unable" id="unable">
+      <div class="movie-missing" id="movie-missing">
         <p>
-          Unable to find what you're looking for. Please try another search.
+          OOPS! Looks like your movie is missing! Try finding something else
         </p>
       </div>
 
-      <div class="movie-list" id="movie-list"></div>
+      <div class="movie-content-container" id="movie-content-container"></div>
     </main>
 
     <script src="app.js"></script>

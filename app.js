@@ -2,17 +2,17 @@ const API_KEY = "2a7ca420";
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie`;
 const searchContainer = document.getElementById("search-bar");
 const searchField = document.getElementById("search");
-const movieList = document.getElementById("movie-list");
-const startExploring = document.getElementById("start-exploring");
-const unableToFind = document.getElementById("unable");
-const emptyFavoriteList = document.getElementById("empty-watchlist"); ///CHANGE
+const movieContent = document.getElementById("movie-content-container");
+const emptyFindPage = document.getElementById("empty-find-page");
+const movieMissing = document.getElementById("movie-missing");
+const emptyFavoriteList = document.getElementById("empty-favorlist"); ///CHANGE
 
 if (searchContainer) {
     searchContainer.addEventListener("submit", (event) => {
     event.preventDefault();
-    const searchTerm = searchField.value;
+    const searchCondition = searchField.value;
 
-    fetch(`${API_URL}&s=${searchTerm}`)
+    fetch(`${API_URL}&s=${searchCondition}`)
       .then((res) => {
         if (!res.ok) {
           throw Error("Search is unavailable");
@@ -22,13 +22,14 @@ if (searchContainer) {
 
       .then((data) => data.Search.map((movieResult) => movieResult.imdbID))
 
-      .then((movieIDs) => fetchMovies(movieIDs))
-      .then((movies) => showMovies(movies))
-      .catch((err) => showNoResults());
+      .then((movieIDs) => getMovieData(movieIDs))
+      .then((movies) => watchMovieData(movies))
+      .catch((err) => resultDisplayError());
   });
 }
 
-const fetchMovies = (movieIDs) => {
+//get data from API
+const getMovieData = (movieIDs) => {
   return Promise.all(
     movieIDs.map((movieID) => {
       return fetch(`${API_URL}&i=${movieID}`);
@@ -38,32 +39,33 @@ const fetchMovies = (movieIDs) => {
   );
 };
 
-const showMovies = (movies) => {
+//SHOW Movies on page
+const watchMovieData = (movies) => {
   const IDsList = JSON.parse(window.localStorage.getItem("IDsList") || "[]");
-  const moviesHtml = movies.map((movie) => {
-    const poster = movie.Poster;
-    const title = movie.Title;
-    const rating = movie.imdbRating;
-    const duration = movie.Runtime;
-    const genre = movie.Genre;
-    const summary =
+  const parseToHTML = movies.map((movie) => {
+    const movieIMG = movie.Poster;
+    const movieTitle = movie.Title;
+    const movieRating = movie.imdbRating;
+    const movieDuration = movie.Runtime;
+    const movieGenre = movie.Genre;
+    const plot =
       movie.Plot === "N/A" || movie.Plot.slice(-1) === "."
         ? movie.Plot
         : `${movie.Plot.trim()}...`;
     const movieID = movie.imdbID;
-    const onWatchlist = IDsList.includes(movieID);
+    const inFavList = IDsList.includes(movieID);
     return `
       <div class="movie-result">
         <a class="movie-poster" href="https://www.imdb.com/title/${movieID}/"> 
         <img
-          src="${poster === "N/A" ? "images/default-movie-poster.jpg" : poster}"
+          src="${movieIMG === "N/A" ? "images/default-movie-poster.jpg" : movieIMG}"
           alt="movie poster"
           width="300"
           height="447"
         />
         </a> 
         <div class="title-rating">
-          <h3 class="movie-title"><a href="https://www.imdb.com/title/${movieID}/">${title}</a></h3>
+          <h3 class="movie-title"><a href="https://www.imdb.com/title/${movieID}/">${movieTitle}</a></h3>
           <span class="movie-rating"
             ><img
               class="rating-icon"
@@ -71,14 +73,14 @@ const showMovies = (movies) => {
               width="15"
               height="15"
               alt="rating icon"
-            /> ${rating}</span
+            /> ${movieRating}</span
           >
         </div>
         <div class="movie-details">
-          <span class="movie-duration">${duration}</span>
-          <span class="movie-genre">${genre}</span>
+          <span class="movie-duration">${movieDuration}</span>
+          <span class="movie-genre">${movieGenre}</span>
           <button class="${
-            !onWatchlist ? "add-watchlist" : "remove-watchlist"
+            !inFavList ? "add-favlist" : "remove-favlist"
           }" data-id="${movieID}">
             <svg
               width="16"
@@ -112,33 +114,33 @@ const showMovies = (movies) => {
           </button>
         </div>
         <p class="movie-summary">
-          ${summary}
+          ${plot}
         </p>
       </div>
     `;
   });
 
-  movieList.innerHTML = moviesHtml.join("");
-  if (startExploring) {
-    startExploring.style.display = "none";
+  movieContent.innerHTML = parseToHTML.join("");
+  if (emptyFindPage) {
+    emptyFindPage.style.display = "none";
   }
 
-  if (unableToFind) {
-    unableToFind.style.display = "none";
+  if (movieMissing) {
+    movieMissing.style.display = "none";
   }
-  movieList.style.display = "block";
+  movieContent.style.display = "block";
 };
 
-const showNoResults = () => {
-  movieList.style.display = "none";
-  startExploring.style.display = "none";
-  unableToFind.style.display = "grid";
+const resultDisplayError = () => {
+    movieContent.style.display = "none";
+  emptyFindPage.style.display = "none";
+  movieMissing.style.display = "grid";
 };
 
-movieList.addEventListener("click", (event) => {
-  const target = event.target.closest(".add-watchlist");
+movieContent.addEventListener("click", (event) => {
+  const target = event.target.closest(".add-favlist");
 
-  if (target && target.classList.contains("add-watchlist")) {
+  if (target && target.classList.contains("add-favlist")) {
     addToLocalStorage(target);
     event.stopImmediatePropagation();
   }
@@ -153,19 +155,19 @@ const addToLocalStorage = (target) => {
     window.localStorage.setItem("IDsList", JSON.stringify(IDsList));
   }
 
-  target.classList.toggle("add-watchlist");
-  target.classList.toggle("remove-watchlist");
+  target.classList.toggle("add-favlist");
+  target.classList.toggle("remove-favlist");
 };
 
-movieList.addEventListener("click", (event) => {
-  const target = event.target.closest(".remove-watchlist");
+movieContent.addEventListener("click", (event) => {
+  const target = event.target.closest(".remove-favlist");
 
-  if (target && target.classList.contains("remove-watchlist")) {
-    removeFromLocalStorage(target);
+  if (target && target.classList.contains("remove-favlist")) {
+    removeFromStorage(target);
 
-    if (movieList.classList.contains("movie-watchlist")) {
+    if (movieContent.classList.contains("movie-favorites-list")) {
       target.closest(".movie-result").remove();
-      if (!movieList.children.length) {
+      if (!movieContent.children.length) {
         emptyFavoriteList.style.display = "grid";
       }
     }
@@ -174,7 +176,7 @@ movieList.addEventListener("click", (event) => {
   }
 });
 
-const removeFromLocalStorage = (target) => {
+const removeFromStorage = (target) => {
   const ID = target.dataset.id;
   const IDsList = JSON.parse(window.localStorage.getItem("IDsList") || "[]");
 
@@ -185,12 +187,12 @@ const removeFromLocalStorage = (target) => {
     window.localStorage.setItem("IDsList", JSON.stringify(newIDsList));
   }
 
-  target.classList.toggle("add-watchlist");
-  target.classList.toggle("remove-watchlist");
+  target.classList.toggle("add-favlist");
+  target.classList.toggle("remove-favlist");
 };
 
-const showWatchlist = async () => {
-  if (!movieList.classList.contains("movie-watchlist")) {
+const showFavList = async () => {
+  if (!movieContent.classList.contains("movie-favorites-list")) {
     return;
   }
 
@@ -200,8 +202,8 @@ const showWatchlist = async () => {
     return;
   }
   emptyFavoriteList.style.display = "none";
-  const moviesWatchlist = await fetchMovies(IDsList);
-  showMovies(moviesWatchlist);
+  const favMovieList = await getMovieData(IDsList);
+  watchMovieData(favMovieList);
 };
 
-showWatchlist();
+showFavList();

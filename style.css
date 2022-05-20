@@ -175,7 +175,7 @@
     font-weight: 700;
   }
   
-  .unable {
+  .movie-missing {
     font-size: 1.125rem;
     color: var(--background-text);
     font-weight: 700;
@@ -185,7 +185,7 @@
     display: none;
   }
   
-  .empty-watchlist {
+  .empty-favorlist {
     display: grid;
     align-content: center;
     justify-items: center;
@@ -220,7 +220,7 @@
     margin-top: 2rem;
   }
   
-  .movie-watchlist {
+  .movie-favorites-list {
     margin-top: 2.625rem;
   }
   
@@ -314,8 +314,8 @@
     grid-area: genre;
   }
   
-  .add-watchlist,
-  .remove-watchlist {
+  .add-favlist,
+  .remove-favlist {
     grid-area: addOrRemove;
     color: var(--add-movies-text-color);
     background-color: transparent;
@@ -336,11 +336,11 @@
     display: none;
   }
   
-  .remove-watchlist .remove-icon {
+  .remove-favlist .remove-icon {
     display: block;
   }
   
-  .remove-watchlist .plus-icon {
+  .remove-favlist .plus-icon {
     display: none;
   }
   
