@@ -10,7 +10,7 @@
 html, body {
   overflow-x: hidden;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-attachment: fixed;
   animation: image 30s infinite alternate-reverse;
 }
 
@@ -162,7 +162,7 @@ header .fav-box a:hover {
 }
 
 .main-section .search-container #search:hover {
-  width: 700px;
+  width: 600px;
 }
 
 .main-section .search-container .submit-search {
@@ -217,5 +217,91 @@ header .fav-box a:hover {
 .main-section .movie-missing p {
   font-size: 2.5rem;
   opacity: 0.6;
+}
+
+.main-section #movie-content-container {
+  background-color: #d2fff0;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+.main-section #movie-content-container .movie-result {
+  border: 1px solid black;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-section #movie-content-container .movie-result img {
+  width: 60%;
+  margin: 20px 0;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.main-section #movie-content-container .movie-result img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-section #movie-content-container .card-info .card-title {
+  font-size: 1.7rem;
+  margin: 0 20px;
+}
+
+.main-section #movie-content-container .card-info-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 20px;
+}
+
+.main-section #movie-content-container .card-plot-box {
+  margin: 20px 40px;
+}
+
+.main-section #movie-content-container .card-btn-box button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border: 1px solid;
+  margin: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.main-section #movie-content-container .card-btn-box button:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.main-section #movie-content-container .card-btn-box .remove-favlist {
+  background-color: red;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border: 1px solid;
+  margin: 10px;
 }
 /*# sourceMappingURL=style.css.map */
