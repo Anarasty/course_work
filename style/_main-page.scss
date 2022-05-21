@@ -86,7 +86,6 @@
 
 #movie-content-container
 {
-    background-color: rgb(210, 255, 240);
     grid-template-columns: auto auto auto;
     .movie-result {
         border: 1px solid black;
@@ -145,18 +144,20 @@
             border: 1px solid;
             margin: 10px;
             transition: all 0.5s ease;
+            border-radius: 10px;
 
             &:hover {
-                transform:translateY(-10px); ;
+                transform:translateY(-10px);
+                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2),
+                -1px -1px 10px rgba(0, 0, 0, 0.2),
+                -1px 1px 10px rgba(0, 0, 0, 0.2),
+                1px -1px 10px rgba(0, 0, 0, 0.2);
+
             }
         }
 
         .remove-favlist{
-            background-color: red;
-            font-size: 1.5rem;
-            padding: 10px 20px;
-            border: 1px solid;
-            margin: 10px;
+            background-color: $first-color;
         }
     }
 

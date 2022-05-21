@@ -220,7 +220,6 @@ header .fav-box a:hover {
 }
 
 .main-section #movie-content-container {
-  background-color: #d2fff0;
   -ms-grid-columns: auto auto auto;
       grid-template-columns: auto auto auto;
 }
@@ -290,18 +289,17 @@ header .fav-box a:hover {
   margin: 10px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  border-radius: 10px;
 }
 
 .main-section #movie-content-container .card-btn-box button:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .main-section #movie-content-container .card-btn-box .remove-favlist {
-  background-color: red;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  border: 1px solid;
-  margin: 10px;
+  background-color: #ff0000;
 }
 /*# sourceMappingURL=style.css.map */
