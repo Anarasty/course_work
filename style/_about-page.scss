@@ -1,0 +1,29 @@
+.about-section{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2),
+    -1px -1px 10px rgba(0, 0, 0, 0.2),
+    -1px 1px 10px rgba(0, 0, 0, 0.2),
+    1px -1px 10px rgba(0, 0, 0, 0.2);
+    font-family: $secondary-font;
+    background-color: $third-color;
+    min-height: 80vh;
+    .about-box{
+        margin: 20px;
+        display: flex;
+        img {
+            width: 30%;
+        }
+        p{
+            font-size: 1.5rem;
+            margin: 30px;
+            span{
+                color: $first-color;
+            }
+        }
+    }
+}

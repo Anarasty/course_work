@@ -302,4 +302,42 @@ header .fav-box a:hover {
 .main-section #movie-content-container .card-btn-box .remove-favlist {
   background-color: #ff0000;
 }
+
+.about-section {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Mukta", sans-serif;
+  background-color: #ffffff;
+  min-height: 80vh;
+}
+
+.about-section .about-box {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-section .about-box img {
+  width: 30%;
+}
+
+.about-section .about-box p {
+  font-size: 1.5rem;
+  margin: 30px;
+}
+
+.about-section .about-box p span {
+  color: #ff0000;
+}
 /*# sourceMappingURL=style.css.map */
