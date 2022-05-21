@@ -1,6 +1,6 @@
 const API_KEY = "2a7ca420";
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie`;
-const searchContainer = document.getElementById("search-bar");
+const searchContainer = document.getElementById("search-container");
 const searchField = document.getElementById("search");
 const movieContent = document.getElementById("movie-content-container");
 const emptyFindPage = document.getElementById("empty-find-page");

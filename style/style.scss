@@ -17,4 +17,43 @@ $secondary-font: 'Mukta', sans-serif;
     box-sizing: border-box;
 }
 
+html,body{
+    overflow-x: hidden;
+    // background: url('../images/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: image 30s infinite alternate-reverse;
+}
+
+@keyframes image {
+    0% {
+        background-image: url('../images/bg1.jpg');
+        
+    }
+    20%{
+        background-image: url('../images/bg2.jpg');
+        
+    }
+    40%{
+        background-image: url('../images/bg3.jpg');
+        
+    }
+    60%{
+        background-image: url('../images/bg4.jpg');
+        
+    }
+    80%{
+        background-image: url('../images/bg5.jpg');
+        
+    }
+    100%{
+        background-image: url('../images/bg6.jpg');
+        
+    }
+}
+
+
+
+
 @import '_header';
+@import '_main-page';

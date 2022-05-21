@@ -19,18 +19,14 @@
 
   <body>
     <header>
-      <!-- <div class="header-container container">
-        <h1>Find your film</h1>
-        <a class="header-link" href="favlist.html">My Watchlist</a>
-      </div> -->
       <div class="logo">
         <h1><span>M</span>OVIE <span>T</span>IME</h1>
       </div>
       <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
         </ul>
       </nav>
       <div class="fav-box">
@@ -38,34 +34,14 @@
       </div>
     </header>
 
-    <main class="main-container container">
-      <form class="search-bar" id="search-bar">
-        <label class="search-label" aria-label="search" for="search"
-          ><img
-            src="images/search-icon.svg"
-            width="16"
-            height="16"
-            alt="search icon"
-        /></label>
-        <input
-          autocomplete="off"
-          id="search"
-          class="search-input"
-          type="text"
-          placeholder="Search for a movie"
-          required
-        />
+    <!-- <main class="main-container container">
+      <form class="search-container" id="search-container">
+        <label class="search-label" aria-label="search" for="search"><img src="images/search-icon.svg" width="16" height="16" alt="search icon"/></label>
+        <input autocomplete="off" id="search" class="search-input" type="text" placeholder="Search for a movie" required/>
         <button class="search-button">Search</button>
       </form>
 
       <div class="empty-find-page" id="empty-find-page">
-        <!-- <img
-          src="images/start-exploring.svg"
-          width="70"
-          height="61.25"
-          alt=""
-        /> -->
-        <!-- <p class="start-exploring-text">Start exploring</p> -->
         <h1>Search for something</h1>
       </div>
 
@@ -76,7 +52,25 @@
       </div>
 
       <div class="movie-content-container" id="movie-content-container"></div>
-    </main>
+    </main> -->
+
+    <section class="main-section">
+      <form class="search-container" id="search-container">
+        <input type="text" id="search" class="search-field" type="text" placeholder="Search for a movie" required>
+        <button class="submit-search">Search</button>
+      </form>
+
+      <div class="empty-find-page" id="empty-find-page">
+        <img src="images/search-main.png" alt="1">
+        <h1>Search for something</h1>
+      </div>
+
+      <div class="movie-missing" id="movie-missing">
+        <p>OOPS! Looks like your movie is missing! Try finding something else</p>
+      </div>
+
+      <div class="movie-content-container" id="movie-content-container"></div>
+    </section>
 
     <script src="app.js"></script>
   </body>
