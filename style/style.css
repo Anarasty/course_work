@@ -141,6 +141,7 @@ header .fav-box a:hover {
   font-family: "Mukta", sans-serif;
   background-color: #ffffff;
   min-height: 80vh;
+  color: rgba(23, 140, 0, 0.546);
 }
 
 .main-section .search-container {
@@ -219,12 +220,12 @@ header .fav-box a:hover {
   opacity: 0.6;
 }
 
-.main-section #movie-content-container {
-  -ms-grid-columns: 30% 30% 30%;
-      grid-template-columns: 30% 30% 30%;
+.main-section .movie-content-container {
+  -ms-grid-columns: 400px 400px 400px;
+      grid-template-columns: 400px 400px 400px;
 }
 
-.main-section #movie-content-container .movie-result {
+.main-section .movie-content-container .movie-result {
   border: 1px solid black;
   margin: 20px;
   display: -webkit-box;
@@ -246,7 +247,8 @@ header .fav-box a:hover {
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
 }
 
-.main-section #movie-content-container .movie-result img {
+.main-section .movie-content-container .movie-result img {
+  max-width: 100%;
   width: 60%;
   margin: 20px 0;
   border-radius: 10px;
@@ -254,19 +256,19 @@ header .fav-box a:hover {
   transition: all 0.5s ease;
 }
 
-.main-section #movie-content-container .movie-result img:hover {
+.main-section .movie-content-container .movie-result img:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
 }
 
-.main-section #movie-content-container .card-info .card-title {
+.main-section .movie-content-container .card-info .card-title {
   font-size: 1.7rem;
   margin: 0 20px;
 }
 
-.main-section #movie-content-container .card-info-more {
+.main-section .movie-content-container .card-info-more {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,11 +279,11 @@ header .fav-box a:hover {
   margin: 0 20px;
 }
 
-.main-section #movie-content-container .card-plot-box {
+.main-section .movie-content-container .card-plot-box {
   margin: 20px 40px;
 }
 
-.main-section #movie-content-container .card-btn-box button {
+.main-section .movie-content-container .card-btn-box button {
   background-color: transparent;
   font-size: 1.5rem;
   padding: 10px 20px;
@@ -292,14 +294,14 @@ header .fav-box a:hover {
   border-radius: 10px;
 }
 
-.main-section #movie-content-container .card-btn-box button:hover {
+.main-section .movie-content-container .card-btn-box button:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2), -1px 1px 10px rgba(0, 0, 0, 0.2), 1px -1px 10px rgba(0, 0, 0, 0.2);
 }
 
-.main-section #movie-content-container .card-btn-box .remove-favlist {
+.main-section .movie-content-container .card-btn-box .remove-favlist {
   background-color: #ff0000;
 }
 

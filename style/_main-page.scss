@@ -83,11 +83,13 @@
         }
     }
 
-
-#movie-content-container
+color: rgba(23, 140, 0, 0.546);
+.movie-content-container
 {
-    grid-template-columns: 30% 30% 30%;
+    // grid-template-columns: auto auto auto;
+    grid-template-columns: 400px 400px 400px;
     .movie-result {
+        // max-width: 30%;
         border: 1px solid black;
         margin: 20px;
         display: flex;
@@ -102,6 +104,7 @@
                 1px -1px 10px rgba(0, 0, 0, 0.2);
 
         img {
+            max-width: 100%;
             width: 60%;
             margin: 20px 0;
             border-radius: 10px;
