@@ -7,6 +7,7 @@ const emptyFindPage = document.getElementById("empty-find-page");
 const movieMissing = document.getElementById("movie-missing");
 const emptyFavoriteList = document.getElementById("empty-favorlist"); ///CHANGE
 
+// Search btn
 if (searchContainer) {
     searchContainer.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -45,7 +46,7 @@ const watchMovieData = (movies) => {
   const parseToHTML = movies.map((movie) => {
     const movieIMG = movie.Poster;
     const movieTitle = movie.Title;
-    const movieRating = movie.imdbRating;
+    // const movieRating = movie.imdbRating;
     const movieDuration = movie.Runtime;
     const movieGenre = movie.Genre;
     const plot =
@@ -56,7 +57,7 @@ const watchMovieData = (movies) => {
     const inFavList = IDsList.includes(movieID);
     return `
     <div class="movie-result">
-    <img src="${movieIMG === "N/A" ? "images/default-movie-poster.jpg" : movieIMG}" alt="movieIMG">
+    <a class="movie-poster2" href="https://www.imdb.com/title/${movieID}/" target="_blank"><img src="${movieIMG === "N/A" ? "images/default-movie-poster.jpg" : movieIMG}" alt="movieIMG"></a>
   
     <div class="card-info">
       <h2 class="card-title">${movieTitle}</h2>
@@ -84,6 +85,7 @@ const watchMovieData = (movies) => {
   movieContent.style.display = "grid";
 };
 
+// if wrong input
 const resultDisplayError = () => {
     movieContent.style.display = "none";
   emptyFindPage.style.display = "none";
@@ -94,12 +96,12 @@ movieContent.addEventListener("click", (event) => {
   const target = event.target.closest(".add-favlist");
 
   if (target && target.classList.contains("add-favlist")) {
-    addToLocalStorage(target);
+    addToStorage(target);
     event.stopImmediatePropagation();
   }
 });
 
-const addToLocalStorage = (target) => {
+const addToStorage = (target) => {
   const ID = target.dataset.id;
   const IDsList = JSON.parse(window.localStorage.getItem("IDsList") || "[]");
 

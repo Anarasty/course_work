@@ -1,3 +1,221 @@
+@media only screen and (max-width: 1200px) 
+{
+    header {
+        .logo {
+            h1 {
+                font-size: 3.5rem;
+                margin-left: 30px;
+            }
+        }
+
+        nav {
+            ul {
+                li {
+                    a{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        
+        .fav-box {
+            a {
+                margin: 0 30px;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .main-section {
+        .search-container {
+            #search {
+                width: 350px;
+                padding: 8px 16px;
+                font-size: 1.3rem;
+
+                &:hover {
+                    width: 450px;
+                }
+            }
+
+            .submit-search {
+                font-size: 1.3rem;
+                padding: 8px 16px;
+            }
+        }
+
+        .empty-find-page {
+            img {
+                width: 50%;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .movie-missing{
+            p{
+                font-size: 1.5rem;
+                margin: 10px;
+            }
+        }
+    }
+
+
+    .about-section {
+        .about-box {
+            img {
+                width: 40%;
+            }
+            p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .empty-favorlist {
+        img {
+            width: 80%;
+        }
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
+
 @media only screen and (max-width: 992px) {
+    header {
+        .logo {
+            h1 {
+                font-size: 3rem;
+                margin-left: 15px;
+            }
+        }
+
+        nav {
+            ul {
+                li {
+                    margin: 0 10px;
+                    a{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+        
+        .fav-box {
+            a {
+                margin: 0 15px;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .main-section {
+        .search-container {
+            margin: 40px 20px;
+
+            #search {
+                width: 280px;
+
+                &:hover {
+                    width: 320px;
+                }
+            }
+        }
+
+        .empty-find-page {
+            img {
+                width: 30%;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .movie-missing{
+            p{
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .about-section {
+        min-height: 50vh;
+        .about-box {
+            p {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .empty-favorlist {
+        img {
+            width: 80%;
+        }
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    header {
+        flex-direction: column;
+    }
+
+    .main-section {
+        .search-container{
+            margin: 30px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            #search{
+                margin: 10px 0;
+
+                &:hover {
+                    width: 280px;
+                }
+            }
+            .submit-search{
+                width: 100px;
+            }
+        }
+
+        .empty-find-page{
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .movie-content-container {
+            .movie-result {
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .about-section {
+        .about-box{
+            flex-direction: column;
+
+            img{
+                width: 100%;
+            }
+            p{
+                margin: 5px;
+            }
+        }
+    }
+
+    .empty-favorlist{
+        h2 {
+            font-size: 2rem;
+        }
+    }
     
 }
