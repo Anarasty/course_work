@@ -13,9 +13,12 @@ header{
         h1{
             font-size: 4rem;
             margin-left: 50px;
-
-            span{
-                color: $first-color;
+            a {
+                text-decoration: none;
+                color: $second-color;
+                span{
+                    color: $first-color;
+                }
             }
         }
     }

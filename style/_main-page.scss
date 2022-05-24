@@ -86,8 +86,6 @@
 
 .movie-content-container
 {
-    // grid-template-columns: auto auto auto;
-    // grid-template-columns: 400px 400px 400px;
     grid-template-columns: repeat(auto-fill, minmax(min(400px, 400px), 1fr));
     .movie-result {
         margin: 20px;
@@ -105,7 +103,6 @@
         a {
             img {
                 max-width: 100%;
-                // width: 60%;
                 margin: 20px 0;
                 border-radius: 10px;
                 transition: all 0.5s ease;
@@ -164,10 +161,7 @@
         }
     }
 
-    
 }
-
-
 }
 
 
