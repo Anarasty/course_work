@@ -159,6 +159,9 @@
         .remove-favlist{
             background-color: $first-color;
         }
+        .remove-favlist::after{
+            content: "★";
+        }
     }
 
 }

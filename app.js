@@ -1,4 +1,4 @@
-const API_KEY = "2a7ca420";
+const API_KEY = "4722b43c";
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie`;
 const searchContainer = document.getElementById("search-container");
 const searchField = document.getElementById("search");
@@ -46,7 +46,6 @@ const watchMovieData = (movies) => {
   const parseToHTML = movies.map((movie) => {
     const movieIMG = movie.Poster;
     const movieTitle = movie.Title;
-    // const movieRating = movie.imdbRating;
     const movieDuration = movie.Runtime;
     const movieGenre = movie.Genre;
     const plot =
@@ -57,8 +56,7 @@ const watchMovieData = (movies) => {
     const inFavList = IDsList.includes(movieID);
     return `
     <div class="movie-result">
-    <a class="movie-poster2" href="https://www.imdb.com/title/${movieID}/" target="_blank"><img src="${movieIMG === "N/A" ? "images/default-movie-poster.jpg" : movieIMG}" alt="movieIMG"></a>
-  
+    <a class="movie-img-main" href="https://www.imdb.com/title/${movieID}/" target="_blank"><img src="${movieIMG === "N/A" ? "images/default-movie-poster.jpg" : movieIMG}" alt="movieIMG"></a>
     <div class="card-info">
       <h2 class="card-title">${movieTitle}</h2>
     </div>
