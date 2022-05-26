@@ -5,7 +5,7 @@ const searchField = document.getElementById("search");
 const movieContent = document.getElementById("movie-content-container");
 const emptyFindPage = document.getElementById("empty-find-page");
 const movieMissing = document.getElementById("movie-missing");
-const emptyFavoriteList = document.getElementById("empty-favorlist"); ///CHANGE
+const emptyFavoriteList = document.getElementById("empty-favorlist"); 
 
 // Search btn
 if (searchContainer) {
